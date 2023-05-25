@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
+use PHPUnit\Util\Type;
 use Symfony\Component\Serializer\Annotation\Ignore;
 use Symfony\Component\Serializer\Annotation\SerializedName;
 
@@ -33,6 +34,10 @@ class Calculation
     #[Column(type: Types::FLOAT, nullable: true)]
     #[SerializedName('VAT rate')]
     private ?float $taxRate = null;
+
+    #[Column(type: Types::FLOAT, nullable: true)]
+    #[SerializedName('VAT amount')]
+    private ?float $taxAmount = null;
 
     public function getId(): ?int
     {
@@ -67,5 +72,15 @@ class Calculation
     public function setTaxRate(?float $taxRate): void
     {
         $this->taxRate = $taxRate;
+    }
+
+    public function getTaxAmount(): ?float
+    {
+        return $this->taxAmount;
+    }
+
+    public function setTaxAmount(?float $taxAmount): void
+    {
+        $this->taxAmount = $taxAmount;
     }
 }

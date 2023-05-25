@@ -37,12 +37,14 @@
                             <tr>
                                 <th>Price (ex. VAT)</th>
                                 <th>VAT rate</th>
+                                <th>VAT amount</th>
                                 <th>Price (inc. VAT)</th>
                             </tr>
                             {% for calculation in previousCalculations %}
                                 <tr>
                                     <td>{{ calculation.getNetPrice|format_currency('GBP') }}</td>
                                     <td>{{ calculation.getTaxRate|format_number(style='percent') }}</td>
+                                    <td>{{ calculation.getTaxAmount|format_currency('GBP') }}</td>
                                     <td>{{ calculation.getGrossPrice|format_currency('GBP') }}</td>
                                 </tr>
                             {% endfor %}

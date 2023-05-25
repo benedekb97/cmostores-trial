@@ -20,6 +20,10 @@ class PricingCalculator
             $calculationDto->getPrice() / (1 + $calculationDto->getVatRate())
         );
 
+        $pricing->setTaxAmount(
+            $pricing->getGrossPrice() - $pricing->getNetPrice()
+        );
+
         return $pricing;
     }
 
@@ -32,6 +36,10 @@ class PricingCalculator
 
         $pricing->setGrossPrice(
             $calculationDto->getPrice() * (1 + $calculationDto->getVatRate())
+        );
+
+        $pricing->setTaxAmount(
+            $pricing->getGrossPrice() - $pricing->getNetPrice()
         );
 
         return $pricing;
