@@ -14,6 +14,7 @@ I used `apache2` installed locally on my machine's WSL integration with `php8.2`
 - `src/Calculator/PricingCalculator.php` - class used to calculate gross and net values from the given user value and 
 VAT rate
 - `migrations/Version20230525095836.php` - doctrine generated migration class
+- `migrations/Version20230525110537.php` - add tax amount field
 - `templates/index.html.twig` - main template for displaying content to the user
 
 ## Modified files
