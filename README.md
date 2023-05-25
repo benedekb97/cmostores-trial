@@ -1,5 +1,9 @@
 # cmostores.com Trial Task
 
+## Basic information
+
+I used `apache2` installed locally on my machine's WSL integration with `php8.2` and `mariadb-server`
+
 ## Added files
 
 - `src/Entity/Calculation.php` - this is the database model used to store previous calculations
@@ -7,7 +11,8 @@
 - `src/Repository/CalculationRepository.php` - repository class for `Calculation` model
 - `src/Controller/CalculationController.php` - controller class
 - `src/Entity/DTO/CalculationDto.php` - data transfer object to store data entered in the form
-- `src/Calculator/PricingCalculator.php` - class used to calculate gross and net values from the given user value and VAT rate
+- `src/Calculator/PricingCalculator.php` - class used to calculate gross and net values from the given user value and 
+VAT rate
 - `migrations/Version20230525095836.php` - doctrine generated migration class
 - `templates/index.html.twig` - main template for displaying content to the user
 
