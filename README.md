@@ -4,6 +4,9 @@
 
 I used `apache2` installed locally on my machine's WSL integration with `php8.2` and `mariadb-server`
 
+The site is protected from SQL injection by Doctrine, and XSS is not possible because the data types used in the 
+database cannot store strings and therefore executable code
+
 ## Added files
 
 - `src/Entity/Calculation.php` - this is the database model used to store previous calculations
