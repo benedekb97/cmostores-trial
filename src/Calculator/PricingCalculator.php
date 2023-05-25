@@ -9,7 +9,7 @@ use App\Entity\Calculation;
 
 class PricingCalculator
 {
-    public function calculateIncludingVat(CalculationDto $calculationDto): Calculation
+    public function calculateNetValue(CalculationDto $calculationDto): Calculation
     {
         $pricing = new Calculation();
 
@@ -23,7 +23,7 @@ class PricingCalculator
         return $pricing;
     }
 
-    public function calculateExcludingVat(CalculationDto $calculationDto): Calculation
+    public function calculateGrossValue(CalculationDto $calculationDto): Calculation
     {
         $pricing = new Calculation();
 

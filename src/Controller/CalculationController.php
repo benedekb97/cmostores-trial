@@ -34,11 +34,11 @@ class CalculationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $pricingIncludingVat = $this->pricingCalculator->calculateIncludingVat($calculationDto);
-            $pricingExcludingVat = $this->pricingCalculator->calculateExcludingVat($calculationDto);
+            $pricingNetValue = $this->pricingCalculator->calculateNetValue($calculationDto);
+            $pricingGrossValue = $this->pricingCalculator->calculateGrossValue($calculationDto);
 
-            $this->entityManager->persist($pricingExcludingVat);
-            $this->entityManager->persist($pricingIncludingVat);
+            $this->entityManager->persist($pricingGrossValue);
+            $this->entityManager->persist($pricingNetValue);
             $this->entityManager->flush();
         }
 
